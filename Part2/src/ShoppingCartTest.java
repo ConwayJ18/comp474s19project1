@@ -145,9 +145,9 @@ class ShoppingCartTest
 		assertEquals("123.46", String.valueOf(ShoppingCart.roundOff(123.4567)));
 		assertEquals("98765.43", String.valueOf(ShoppingCart.roundOff(98765.4321)));
 		assertEquals("555.56", String.valueOf(ShoppingCart.roundOff(555.5555)));
-		assertEquals("10.00", String.valueOf(ShoppingCart.roundOff(10.004)));
-		assertEquals("5.52", String.valueOf(ShoppingCart.roundOff(5.52)));
-		assertEquals("9.40", String.valueOf(ShoppingCart.roundOff(9.4)));
-		assertEquals("7.00", String.valueOf(ShoppingCart.roundOff(7)));
+		assertEquals("10.00", String.format("%.2f", ShoppingCart.roundOff(10.004)));
+		assertEquals("5.52", String.format("%.2f", ShoppingCart.roundOff(5.52)));
+		assertEquals("9.40", String.format("%.2f", ShoppingCart.roundOff(9.4)));
+		assertEquals("7.00", String.format("%.2f", ShoppingCart.roundOff(7)));
 	}
 }
