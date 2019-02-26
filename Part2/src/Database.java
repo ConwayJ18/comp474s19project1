@@ -2,29 +2,29 @@ import java.util.HashMap;
 
 public class Database 
 {
-	static HashMap<Integer, Item> itemList = new HashMap<Integer, Item>();
+	static HashMap<String, Item> itemList = new HashMap<String, Item>();
 	
-	static void addItem(int id)
+	static void addItem(String id)
 	{
 		itemList.put(id, new Item(id));
 	}
 	
-	static void addItem(int id, double price)
+	static void addItem(String id, double price)
 	{
 		itemList.put(id, new Item(id, price));
 	}
 	
-	static void addItem(int id, double price, int stock)
+	static void addItem(String id, double price, int stock)
 	{
 		itemList.put(id, new Item(id, price, stock));
 	}
 	
-	static void removeItem(int id)
+	static void removeItem(String id)
 	{
 		itemList.remove(id);
 	}
 	
-	static Item getItem(int id)
+	static Item getItem(String id)
 	{
 		return itemList.get(id);
 	}
