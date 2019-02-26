@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ShoppingCartTest (1)" project="Part2" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="ShoppingCartTest" time="0.04" uniqueid="[engine:junit-jupiter]/[class:ShoppingCartTest]">
+    <testcase name="baCheckoutTests" classname="ShoppingCartTest" time="0.017" displayname="baCheckoutTests()" uniqueid="[engine:junit-jupiter]/[class:ShoppingCartTest]/[method:baCheckoutTests()]"/>
+    <testcase name="primaryCheckoutTests" classname="ShoppingCartTest" time="0.009" displayname="primaryCheckoutTests()" uniqueid="[engine:junit-jupiter]/[class:ShoppingCartTest]/[method:primaryCheckoutTests()]"/>
+    <testcase name="roundOffTests" classname="ShoppingCartTest" time="0.014" displayname="roundOffTests()" uniqueid="[engine:junit-jupiter]/[class:ShoppingCartTest]/[method:roundOffTests()]"/>
+  </testsuite>
+</testrun>
