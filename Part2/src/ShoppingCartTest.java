@@ -2,6 +2,8 @@ import org.junit.*;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 
 
 class ShoppingCartTest 
@@ -9,6 +11,42 @@ class ShoppingCartTest
 	@Test
 	void primaryCheckoutTests()
 	{
+		//Initialize items to be placed in a Database, associating item ID to price
+		Database.addItem("1", 83.10);
+		Database.addItem("2");
+		
+		//Mock object to be used for testing
+		ShoppingCart sc = new ShoppingCart();
+		
+		//Not a Discount Member, not tax exempt
+		Customer c1 = new Customer(1);
+		
+		//Discount Member, not tax exempt
+		Customer c2 = new Customer(2, true);
+		
+		//Discount Member, tax exempt
+		Customer c3 = new Customer(3, true, true);
+		
+		//Not a Discount Member, tax exempt
+		Customer c4 = new Customer(4, false, true);
+		
+		//Quantity q < 5
+		ArrayList<String> smallCart = new ArrayList<String>(Arrays.asList("1", "2", "2"));
+		
+		//Quantity 5 <= q < 10
+		ArrayList<String> mediumCart = new ArrayList<String>(Arrays.asList("1", "2", "2", "2", "2", "2", "2"));
+		
+		//Quantity 10 <= q <= 50
+		ArrayList<String> largeCart = new ArrayList<String>(Arrays.asList("1", "2", "2", "2", "2", "2", "2", "2", "2", "2"));
+		
+		//Quantity q > 50
+		ArrayList<String> tooLargeCart = new ArrayList<String>(Arrays.asList("1", "2", "2", "2", "2", "2", "2", "2", "2", "2",
+																			"2", "2", "2", "2", "2", "2", "2", "2", "2", "2",
+																			"2", "2", "2", "2", "2", "2", "2", "2", "2", "2",
+																			"2", "2", "2", "2", "2", "2", "2", "2", "2", "2",
+																			"2", "2", "2", "2", "2", "2", "2", "2", "2", "2",
+																			"2"));
+				
 		//Expected outputs, numbered according to previously submitted document
 		String[] eo1 = new String[] {"TooManyItemsError"};
 		String[] eo2 = new String[] {"83.10", "15.79", "0.00", "67.31"};
@@ -27,6 +65,57 @@ class ShoppingCartTest
 	@Test
 	void baCheckoutTests()
 	{
+		//Initialize items to be placed in a Database, associating item ID to price
+		Database.addItem("1", 83.10);
+		Database.addItem("2");
+		
+		//Mock object to be used for testing
+		ShoppingCart sc = new ShoppingCart();
+		
+		//Not a Discount Member, tax exempt
+		Customer c4 = new Customer(4, false, true);
+		
+		//Quantity q = 4
+		ArrayList<String> four = new ArrayList<String>(Arrays.asList("1", "2", "2", "2"));
+		
+		//Quantity q = 5
+		ArrayList<String> five = new ArrayList<String>(Arrays.asList("1", "2", "2", "2", "2"));
+				
+		//Quantity q = 6
+		ArrayList<String> six = new ArrayList<String>(Arrays.asList("1", "2", "2", "2", "2", "2"));
+		
+		//Quantity q = 9
+		ArrayList<String> nine = new ArrayList<String>(Arrays.asList("1", "2", "2", "2", "2", "2", "2", "2", "2"));
+		
+		//Quantity q = 10
+		ArrayList<String> ten = new ArrayList<String>(Arrays.asList("1", "2", "2", "2", "2", "2", "2", "2", "2", "2"));
+		
+		//Quantity q = 11
+		ArrayList<String> eleven = new ArrayList<String>(Arrays.asList("1", "2", "2", "2", "2", "2", "2", "2", "2", "2",
+																		"2"));
+
+		//Quantity q = 49
+		ArrayList<String> fortyNine = new ArrayList<String>(Arrays.asList("1", "2", "2", "2", "2", "2", "2", "2", "2", "2",
+																		"2", "2", "2", "2", "2", "2", "2", "2", "2", "2",
+																		"2", "2", "2", "2", "2", "2", "2", "2", "2", "2",
+																		"2", "2", "2", "2", "2", "2", "2", "2", "2", "2",
+																		"2", "2", "2", "2", "2", "2", "2", "2", "2"));		
+		
+		//Quantity q = 50
+		ArrayList<String> fifty = new ArrayList<String>(Arrays.asList("1", "2", "2", "2", "2", "2", "2", "2", "2", "2",
+																		"2", "2", "2", "2", "2", "2", "2", "2", "2", "2",
+																		"2", "2", "2", "2", "2", "2", "2", "2", "2", "2",
+																		"2", "2", "2", "2", "2", "2", "2", "2", "2", "2",
+																		"2", "2", "2", "2", "2", "2", "2", "2", "2", "2"));
+				
+		//Quantity q = 51
+		ArrayList<String> fiftyOne = new ArrayList<String>(Arrays.asList("1", "2", "2", "2", "2", "2", "2", "2", "2", "2",
+																			"2", "2", "2", "2", "2", "2", "2", "2", "2", "2",
+																			"2", "2", "2", "2", "2", "2", "2", "2", "2", "2",
+																			"2", "2", "2", "2", "2", "2", "2", "2", "2", "2",
+																			"2", "2", "2", "2", "2", "2", "2", "2", "2", "2",
+																			"2"));
+				
 		//Expected outputs, numbered according to previously submitted document
 		String[] eo6 = new String[] {"TooManyItemsError"};
 		String[] eo7 = new String[] {"83.10", "8.31", "0.00", "74.79"};
