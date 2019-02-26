@@ -1,6 +1,6 @@
 public class Item
 {
-	String itemID;
+	int itemID;
 	double itemPrice;
 	int itemStock;
 	
@@ -9,7 +9,7 @@ public class Item
 	/**
 	 * @param itemID
 	 */
-	public Item(String itemID)
+	public Item(int itemID)
 	{
 		this.itemID = itemID;
 		this.itemPrice = 0;
@@ -19,7 +19,7 @@ public class Item
 	 * @param itemID
 	 * @param itemPrice
 	 */
-	public Item(String itemID, double itemPrice)
+	public Item(int itemID, double itemPrice)
 	{
 		this.itemID = itemID;
 		this.itemPrice = itemPrice;
@@ -30,7 +30,7 @@ public class Item
 	 * @param itemPrice
 	 * @param itemStock
 	 */
-	public Item(String itemID, double itemPrice, int itemStock)
+	public Item(int itemID, double itemPrice, int itemStock)
 	{
 		this.itemID = itemID;
 		this.itemPrice = itemPrice;
@@ -40,7 +40,7 @@ public class Item
 	/**
 	 * @return the itemID
 	 */
-	public String getItemID()
+	public int getItemID()
 	{
 		return itemID;
 	}
@@ -48,7 +48,7 @@ public class Item
 	/**
 	 * @param itemID the itemID to set
 	 */
-	public void setItemID(String itemID)
+	public void setItemID(int itemID)
 	{
 		this.itemID = itemID;
 	}
