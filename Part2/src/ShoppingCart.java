@@ -77,8 +77,17 @@ public class ShoppingCart
 	
 	public static double roundOff(double price)
 	{
-		DecimalFormat df = new DecimalFormat("0.00");
-		df.setRoundingMode(RoundingMode.HALF_UP);
+		DecimalFormat df = new DecimalFormat("0.00"); //Round to two decimals
+		String temp = String.valueOf(price).substring(String.valueOf(price).indexOf(".")); //Save only the decimal part
+		if(temp.length() > 3) //Prevents errors that would result from following check
+		{
+			if(temp.substring(3,4).equals("5")) //Prevents breakage when input is "X.XX5"
+			{
+				df.setRoundingMode(RoundingMode.UP); //Round up if the third decimal is 5
+			    return Double.valueOf(df.format(price));
+			}
+		}
+		df.setRoundingMode(RoundingMode.HALF_UP); //Round normally otherwise
 	    return Double.valueOf(df.format(price));
 	}
 }
