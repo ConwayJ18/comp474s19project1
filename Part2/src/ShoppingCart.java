@@ -1,3 +1,5 @@
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class ShoppingCart 
@@ -11,6 +13,8 @@ public class ShoppingCart
 	
 	public static double roundOff(double price)
 	{
-		return 0;
+		DecimalFormat df = new DecimalFormat("0.00");
+		df.setRoundingMode(RoundingMode.HALF_UP);
+	    return Double.valueOf(df.format(price));
 	}
 }
